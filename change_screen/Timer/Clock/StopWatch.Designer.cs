@@ -28,106 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            components = new System.ComponentModel.Container();
+            LblWhatTime = new Label();
             panel1 = new Panel();
             listView1 = new ListView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            BtnCheckReset = new Button();
+            BtnStart = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
-            // label1
+            // LblWhatTime
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe Print", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(341, 16);
-            label1.Name = "label1";
-            label1.Size = new Size(448, 112);
-            label1.TabIndex = 0;
-            label1.Text = "0 : 0 : 0 : 0";
+            LblWhatTime.AutoSize = true;
+            LblWhatTime.Font = new Font("Segoe Print", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblWhatTime.ForeColor = Color.White;
+            LblWhatTime.Location = new Point(244, 15);
+            LblWhatTime.Name = "LblWhatTime";
+            LblWhatTime.Size = new Size(636, 112);
+            LblWhatTime.TabIndex = 0;
+            LblWhatTime.Text = "00 : 00 : 00 : 00";
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Location = new Point(341, 154);
+            panel1.Location = new Point(244, 154);
             panel1.Name = "panel1";
-            panel1.Size = new Size(448, 5);
+            panel1.Size = new Size(636, 5);
             panel1.TabIndex = 1;
             // 
             // listView1
             // 
             listView1.BackColor = Color.FromArgb(28, 38, 48);
             listView1.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            listView1.Location = new Point(347, 182);
+            listView1.Location = new Point(244, 184);
             listView1.Name = "listView1";
-            listView1.Size = new Size(439, 307);
+            listView1.Size = new Size(636, 307);
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // BtnCheckReset
             // 
-            button1.Location = new Point(212, 533);
-            button1.Name = "button1";
-            button1.Size = new Size(129, 72);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            BtnCheckReset.Location = new Point(351, 533);
+            BtnCheckReset.Name = "BtnCheckReset";
+            BtnCheckReset.Size = new Size(164, 72);
+            BtnCheckReset.TabIndex = 3;
+            BtnCheckReset.Text = "구간기록";
+            BtnCheckReset.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnStart
             // 
-            button2.Location = new Point(415, 533);
-            button2.Name = "button2";
-            button2.Size = new Size(129, 72);
-            button2.TabIndex = 4;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(598, 532);
-            button3.Name = "button3";
-            button3.Size = new Size(129, 73);
-            button3.TabIndex = 5;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(793, 532);
-            button4.Name = "button4";
-            button4.Size = new Size(129, 73);
-            button4.TabIndex = 6;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            BtnStart.Location = new Point(635, 533);
+            BtnStart.Name = "BtnStart";
+            BtnStart.Size = new Size(163, 72);
+            BtnStart.TabIndex = 4;
+            BtnStart.Text = "시작";
+            BtnStart.UseVisualStyleBackColor = true;
+            BtnStart.Click += BtnStart_Click;
             // 
             // StopWatch
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(29, 38, 48);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(BtnStart);
+            Controls.Add(BtnCheckReset);
             Controls.Add(listView1);
             Controls.Add(panel1);
-            Controls.Add(label1);
+            Controls.Add(LblWhatTime);
             Name = "StopWatch";
             Size = new Size(1126, 653);
+            Load += StopWatch_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label LblWhatTime;
         private Panel panel1;
         private ListView listView1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button BtnCheckReset;
+        private Button BtnStart;
+        private System.Windows.Forms.Timer timer1;
     }
 }
